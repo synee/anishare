@@ -1,0 +1,27 @@
+{% extends 'layout/single_form.html' %}
+{% block title %}创建小组{% endblock %}
+
+{% block form %}
+    <form method="post">
+        <label class="line-block">
+            <input class="form-control" type="text" name="name" placeholder="小组名称" id="nameInput">
+        </label>
+
+        <label class="line-block">
+            <button class="btn btn-primary btn-block" type="submit" disabled="disabled" id="submitBtn">
+                <i class="glyphicon glyphicon-plus"></i> 创建
+            </button>
+        </label>
+        <script>
+            $(function () {
+                $("#nameInput").keyup(function () {
+                    if ($(this).val().trim()) {
+                        $("#submitBtn").removeAttr('disabled');
+                    } else {
+                        $("#submitBtn").attr({disabled: $(this).val() ? 'false' : 'disabled'});
+                    }
+                });
+            });
+        </script>
+    </form>
+{% endblock %}

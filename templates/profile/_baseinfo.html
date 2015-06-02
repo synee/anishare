@@ -1,0 +1,28 @@
+<form role="form" method="post" enctype="multipart/form-data">
+    <h3>
+        <span>基本信息</span>
+
+        <div class="btn-group pull-right">
+            <button class="btn btn-primary">保存</button>
+            <a href="/profile" class="btn btn-default">取消</a>
+        </div>
+    </h3>
+    <hr/>
+    {% if current_user.avatar %}
+        <div class="form-group text-center">
+            <img src="{{ current_user.avatar }}?imageView2/1/w/150/h/150">
+        </div>
+    {% endif %}
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">头像</span>
+            <input class="form-control" name="avatar" type="file">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">昵称</span>
+            <input class="form-control" name="nickname" type="text" value="{{ current_user }}">
+        </div>
+    </div>
+</form>

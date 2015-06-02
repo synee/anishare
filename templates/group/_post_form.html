@@ -1,0 +1,30 @@
+<form id="postForm" class="form-inline" method="post" action="/group/post"
+      enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9" id="postInputs">
+                <input name="group_id" type="hidden" value="{{ group.id }}">
+
+                <div class="form-group" style="width: 60%; height: 50px; float: left">
+                    <div class="textContent" style="width: 100%; height: 100%" contenteditable="true">
+                        <span></span>
+                    </div>
+                    <textarea name="content" class="form-control" style="display: none;" placeholder="发布内容..."></textarea>
+                </div>
+                <div class="form-group" style="width: 20%; height: 50px; float: left">
+                    <div id="uploadBtn" class="fileUpload btn btn-primary" style="width: 100%">
+                        <span class="fileUpload-text">上传</span>
+                        <input class="form-control fileUpload-input" type="file" name="attach" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group" style="width: 20%; height: 50px; float: left">
+                    <button type="submit" class="btn btn-success" id="postSubmit"
+                            style="width: 100%; height: 100%; border: 0; border-radius: 0;"
+                            disabled="disabled">发布
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

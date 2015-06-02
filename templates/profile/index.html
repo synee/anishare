@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% block title %}个人主页{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="{{ get_nav_class('baseinfo') }}"><a href="/profile/baseinfo">基本信息</a></li>
+                    <li class="{{ get_nav_class('advancement') }}"><a href="/profile/advancement">高级设置</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                {% include 'profile/_%s.html' % panel %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

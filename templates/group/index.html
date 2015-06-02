@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+{% block title %}小组{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked">
+                    {% for group in current_user.my_groups %}
+                        <li>
+                            <a href="/group/{{ group.id }}">{{ group.name }}</a>
+                        </li>
+                    {% endfor %}
+                    <li><a href="/group/create"><i class="glyphicon glyphicon-plus"></i> 创建小组</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <form>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
